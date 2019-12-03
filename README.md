@@ -10,3 +10,19 @@ I hope that the content that I present in this app will give a better reflection
 There will be multiple sections to the app including but not limited to, links to a portfolio(eventually) and an about me section. 
 
 User comments will be welcome.
+
+
+
+
+Models:
+Post & User
+
+Post = title,
+       content,
+       date_posted,
+       author <--- this will be the foreign key relating to the User model
+       
+User = username,
+       email,
+       first_name,
+       last_name
