@@ -5,12 +5,13 @@ from .models import Post
 # Create your views here.
 
 
-
 def home(request):
-    return render(request, 'blog/home.html')
+    return render(request, 'blog/index.html')
+
 
 def about(request):
     return render(request, 'blog/about.html')
+
 
 def post(request):
     context = {
@@ -18,8 +19,10 @@ def post(request):
     }
     return render(request, 'blog/post.html', context)
 
+
 def latest_posts(request):
     return render(request, 'blog/latest_posts.html')
+
 
 def announcements(request):
     return render(request, 'blog/announcements.html')
