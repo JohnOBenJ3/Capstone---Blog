@@ -1,0 +1,12 @@
+{%extends "blog/main.html" %}
+{% block content%}
+    {% for post in posts %}
+    
+    <h1 class="main-header">{{ post.title }}
+        <small class="text-muted">
+            {{post.date_posted|date:"F d, Y"}}
+        </small>
+    </h1>
+    <p class="content">{{ post.content }}</p>
+    {% endfor %}
+{% endblock content%}
