@@ -5,5 +5,6 @@ from . import views
 # But, you don't need the admin url in this file because it is already
 # in the main urls file.
 urlpatterns = [
-    path('', views.home, name='blog-home')
+    path('', views.home, name='blog-home'),
+    path('about/', views.about, name='blog-about')
 ]
