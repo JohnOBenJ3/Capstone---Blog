@@ -17,4 +17,10 @@ def post(request):
         'posts': Post.objects.all()
     }
     return render(request, 'blog/post.html', context)
+
+def latest_posts(request):
+    return render(request, 'blog/latest_posts.html')
+
+def announcements(request):
+    return render(request, 'blog/announcements.html')
     
