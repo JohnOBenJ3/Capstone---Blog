@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 # need to make a model for the Blog Post 
-class Post(model.Model):
+class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
