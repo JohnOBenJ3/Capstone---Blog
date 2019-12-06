@@ -9,6 +9,5 @@ urlpatterns = [
     path('about/', views.about, name='blog-about'),
     path('post/', views.post, name='blog-post'),
     # Cannot have underscores in url patterns.
-    path('latest-posts/', views.latest_posts, name='latest-posts'),
-    path('announcements/', views.announcements, name='announcements')
+    path('contact/', views.contact, name='contact')
 ]
