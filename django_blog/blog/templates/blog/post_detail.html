@@ -1,10 +1,3 @@
-<!-- {% extends "blog/index.html" %} -->
-<!-- {% load static %} -->
-
-
-<!-- <p>{{posts.content}}</p> -->
-<!-- <p>Create by: {{posts.author}} on: {{posts.created_on|date:"F d, Y"}}</p> -->
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -17,7 +10,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Orrin's Blog - {{posts.title}}</title>
+  {% block content %}
+  <title>{{posts.title}}</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -33,7 +27,6 @@
 </head>
 
 <body>
-  {% block content %}
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -52,7 +45,7 @@
             <a class="nav-link" href="{% url 'blog-about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog-post' %}">Posts</a>
+            <a class="nav-link" href="{% url 'blog-home' %}">Posts</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
@@ -63,8 +56,7 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url({% static 'img/blog-detail.jpg' %})">
-    <h2>Copyright &copy; Kyle Hammons</h2>
+  <header class="masthead" style="background-image: url({% static 'img/lights.jpeg' %})">
     
     <div class="overlay"></div>
     <div class="container">
@@ -72,7 +64,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
             <h1>{% block title %}{{posts.title}}{%endblock title%}</h1>
-            <span class="subheading">This is what I do.</span>
+            <span class="subheading"></span>
           </div>
         </div>
       </div>
@@ -124,7 +116,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+          <p class="copyright text-muted">WSGI & Walnut 2019</p>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Orrin's Blog - Home</title>
+  <title>WSGI & Walnut - Home</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -45,9 +45,6 @@
             <a class="nav-link" href="{% url 'blog-about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog-post' %}">Posts</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
         </ul>
@@ -56,14 +53,14 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url(static/img/blog-home-page.jpg)">
+  <header class="masthead" style="background-image: url(static/img/landing.jpeg)">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Orrin's Blog</h1>
-            <span class="subheading"></span>
+            <h1>WSGI & Walnut</h1>
+            <span class="subheading">From Hardwoods to Software</span>
           </div>
         </div>
       </div>
@@ -78,7 +75,8 @@
           {% for post in posts_list %}
         <div class="post-preview">
           <h2 class="post-title"><a href="{% url 'post-detail' post.slug %}">{{post.title}}</h2>
-            <p class="post-meta">Posted on: {{post.created_on|date:"F d, Y"}}</p>
+            <p class="post-meta">{{post.created_on|date:"F d, Y"}}</p>
+            <p class="text-muted">{{post.content|slice:":150" }}...</p>
             <hr>
           </div>
           {% endfor %}
@@ -99,7 +97,7 @@
               <a href="#">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
             </li>
@@ -120,7 +118,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+          <p class="copyright text-muted">WSGI & Walnut 2019</p>
         </div>
       </div>
     </div>

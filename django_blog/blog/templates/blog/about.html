@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Orrin's Blog - About</title>
+  <title>WSGI & Walnut - About</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -45,8 +45,7 @@
             <a class="nav-link" href="{% url 'blog-about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog-post' %}">Posts</a>
-          </li>
+            <a class="nav-link" href="{% url 'blog-home' %}">Posts</a>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
@@ -56,14 +55,14 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url({% static 'img/about-page.jpeg' %})">
+  <header class="masthead" style="background-image: url({% static 'img/about-me.jpeg' %})">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
             <h1>About Me</h1>
-            <span class="subheading">This is what I do.</span>
+            <span class="subheading"></span>
           </div>
         </div>
       </div>
@@ -74,9 +73,47 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+        <p>Hi! My name is Orrin Johnson. I like building things. I also like talking about building things. Recently 
+          I have become a software engineer but that was not always the case.
+        </p>
+        <p>For over decade I worked in a custom woodshop making anything from high-end residential cabinets to 
+          custom entry systems and furniture. In that time I learned some very foundational things about
+          building stuff. Planning is paramount. Mistakes are inevitable. Some times, it's actually <em>better</em>
+          to just start over. The longer you do something the better you get at it. I've taught quite a few people
+          some fundamental wood-working and the theme is usually the same: getting too far out in front of the task
+          and then trying to repair mistakes in the middle of the process. Or <em>worse</em>, the end. Regardless
+          of how good you get at something, maintaining humility keeps you on your toes because you remember that 
+          there is a fine line between success and failure.
+        </p>
+        <p>Today I've traded the chisels for a keyboard, the mallet for a mouse. Joinery is 
+          now through restful routes instead of mortises and tenons. I've become a student all over again, <em>
+            literally.</em> In September of 2019 I joined General Assembly in Denver Colorado to study Web 
+            Development and Software Engineering. I had done some self study but felt like I lacked core fundamentals
+            to take me to the next stage. More than once I found myself questioning my decision! This stuff ain't 
+            easy, but learning new things usually isn't. 
+        </p>
+        <p>It really wasn't until I started making some connections that things got easier. No, not that I just
+          suddenly became a programming wizard, but rather I was able to take the errors in stride and learn what
+          each mistake was trying to tell me. In carpentry, the mistakes are visible and easier to understand. If 
+          there is a gap in your joints you can usually diagnose what you did pretty quickly. In programming on the 
+          other hand, you could have any number of countless errors (usually a typo in my case), and you have to sift through
+          some, at times, vague errors to get to the root of the issue. The connection? Carpentry and software engineering 
+          actually share some pretty interesting parallels, but at their base level they're both still about 
+          one basic thing, <em>building stuff</em>. And I'm all about that.
+        </p>
+        <p>So the purpose of this blog is to document my journey. The highs. The lows. And I might even throw
+          some wood-working talks in there every now and then. My time at school taught me a lot, about loops and 
+          variables and functions and when to use them. More importantly, its taught me how to be a student again.
+          I think when you get pretty good at something you tend to get complacent and that's where the growing stops.
+          I can't take a day off from programming because I'm afraid I'm going to lose some critical information
+          and have to take some steps back. Of course, now that I have some tools in the box, how could I not want
+          to use them!
+        </p>
+        <p>So thanks for stopping by and checking out my site. If you read something you like or just want to
+          reach out I'd love to hear from you. 
+        </p>
+        <img src="{% static 'img/about-me-profile.JPG' %}" alt="">
+        <span class="caption text-muted">That's Bennett. He's a handful.</span>   
       </div>
     </div>
   </div>
@@ -93,7 +130,7 @@
               <a href="#">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
             </li>
@@ -114,7 +151,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+          <p class="copyright text-muted">WSGI & Walnut 2019</p>
         </div>
       </div>
     </div>
