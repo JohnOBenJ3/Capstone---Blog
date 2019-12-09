@@ -39,4 +39,7 @@ def post(request):
 def contact(request):
     return render(request, 'blog/contact.html')
 
+
+
+
     

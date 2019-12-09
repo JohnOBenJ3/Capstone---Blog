@@ -53,7 +53,7 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url(static/img/landing.jpeg)">
+  <header class="masthead" style="background-image: url(static/img/wood-tech.jpeg)">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -75,7 +75,7 @@
           {% for post in posts_list %}
         <div class="post-preview">
           <h2 class="post-title"><a href="{% url 'post-detail' post.slug %}">{{post.title}}</h2>
-            <p class="post-meta">{{post.created_on|date:"F d, Y"}}</p>
+            <p class="post-meta">{{post.created_on|date:"l M d, Y"}}</p>
             <p class="text-muted">{{post.content|slice:":150" }}...</p>
             <hr>
           </div>
