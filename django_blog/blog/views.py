@@ -10,8 +10,8 @@ class PostDetail(generic.DetailView):
     template_name = 'blog/post_detail.html'
     
 class PostList(generic.ListView):
-    queryset = Posts.objects.filter(status=1).order_by('create_on')
-    template_name = 'index.html'
+    queryset = Posts.objects.filter(status=1).order_by('created_on')
+    template_name = 'blog/index.html'
     
     
 context = {
@@ -19,8 +19,8 @@ context = {
 }
 
 
-def home(request):
-    return render(request, 'blog/index.html', context)
+# def home(request):
+#     return render(request, 'blog/index.html', context)
 
 
 def about(request):
