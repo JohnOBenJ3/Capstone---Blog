@@ -7,7 +7,8 @@ from . import views
 urlpatterns = [
     path('', views.home, name='blog-home'),
     path('about/', views.about, name='blog-about'),
-    path('post/', views.post, name='blog-post'),
+    path('posts/', views.post, name='blog-post'),
     # Cannot have underscores in url patterns.
-    path('contact/', views.contact, name='contact')
+    path('contact/', views.contact, name='contact'),
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post-detail')
 ]
