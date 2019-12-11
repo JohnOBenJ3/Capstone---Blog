@@ -7,6 +7,10 @@ verify_ssl = true
 
 [packages]
 django = "*"
+sendgrid = "*"
+psycopg2 = {index = "nary",version = "*"}
+psycopg2-binary = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"

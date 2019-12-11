@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,12 +30,32 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'orrin24johnson@gmail.com'
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# SENDGRID_API_KEY = os.getenv('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')
+
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+
+#this is the test from Reddit
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'orrin24johnson@gmail.com'
 EMAIL_HOST_PASSWORD = 'init4Bennett'
+DEFAULT_FROM_EMAIL = ''
+SERVER_EMAIL = ''
+
 
 
 # Application definition
@@ -85,8 +106,8 @@ WSGI_APPLICATION = 'django_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.path.join(BASE_DIR, 'django_blog'),
     }
 }
 
@@ -128,3 +149,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# EMAIL_HOST_PASSWORD = 'init4Bennett'
+
+django_heroku.settings(locals())
