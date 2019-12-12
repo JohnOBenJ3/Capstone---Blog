@@ -10,5 +10,7 @@ urlpatterns = [
     path('posts/', views.post, name='blog-post'),
     # Cannot have underscores in url patterns.
     path('contact/', views.contact, name='contact'),
-    path('<slug:slug>/', views.PostDetail.as_view(), name='post-detail')
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post-detail'),
+    path('<slug:slug>/delete/', views.delete_post, name='delete-post'),
+    path('<slug:slug>/edit/', views.edit_post, name='edit-post'),
 ]

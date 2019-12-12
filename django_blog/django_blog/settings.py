@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,12 +24,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_1yx_f0jql7zgjcwmc3um75l_rnvz=c-ix%f0hrt@)_@4be8_8'
+SECRET_KEY = os.environ.get('SECRET_KEY') or 'super_secret_key'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'smtp.gmail.com'
@@ -37,7 +40,7 @@ ALLOWED_HOSTS = []
 # EMAIL_HOST_USER = 'orrin24johnson@gmail.com'
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-# SENDGRID_API_KEY = os.getenv('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')
+
 
 # EMAIL_HOST = 'smtp.sendgrid.net'
 # EMAIL_HOST_USER = 'apikey'
@@ -52,7 +55,7 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'orrin24johnson@gmail.com'
-EMAIL_HOST_PASSWORD = 'init4Bennett'
+
 DEFAULT_FROM_EMAIL = ''
 SERVER_EMAIL = ''
 
@@ -61,6 +64,7 @@ SERVER_EMAIL = ''
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -68,9 +72,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,6 +87,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_blog.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -107,9 +115,17 @@ WSGI_APPLICATION = 'django_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.path.join(BASE_DIR, 'django_blog'),
+        'NAME': 'django_blog',
+        'USER': 'orrinjohnson',
+        'PASSWORD': 'BLOG_DB_PASS',
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
+
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -149,6 +165,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 # EMAIL_HOST_PASSWORD = 'init4Bennett'
 

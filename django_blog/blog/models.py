@@ -18,7 +18,7 @@ class Posts(models.Model):
     author = models.ForeignKey(User, on_delete= models.CASCADE, null=True)
     updated_on = models.DateTimeField(auto_now= True)
     content = models.TextField()
-    created_on = models.DateTimeField(default=timezone.now)
+    created_on = models.DateTimeField(default=timezone.now,)
     status = models.IntegerField(choices=STATUS, default=0)
     
     class Meta:

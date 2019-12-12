@@ -1,14 +1,15 @@
 import os
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.http import HttpResponse, BadHeaderError
 from .models import Posts
-from .forms import ContactForm
+from .forms import ContactForm, UpdateForm
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.conf import settings
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+from django.contrib import admin
 
 # Create your views here.
 
@@ -21,9 +22,7 @@ class PostList(generic.ListView):
     template_name = 'blog/index.html'
     
     
-context = {
-    'posts': Posts.objects.all()
-}
+
 
 
 # def home(request):
@@ -41,34 +40,54 @@ def post(request):
     return render(request, 'blog/post.html', context)
 
 
-def contact(request):
+# def contact(request):
     # print("Success!")
-    return render(request, 'blog/contact.html')
+    # return render(request, 'blog/contact.html')
 
 # This function should take the form and if it is a proper post request
 # send the email to my email I used in the settings file.
-def send_email(request):
+def contact(request):
+    return render(request, 'blog/contact.html')
+
+
+def delete_post(request, slug):
+    obj = get_object_or_404(Posts, slug=slug)
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        obj.delete()
+        return redirect('../../')
         
+    context = {
+        "object": obj
+    }
+    
+    return render(request, 'blog/post_delete.html', context)
+
+
+def edit_post(request, slug):
+    post = get_object_or_404(Posts, slug=slug)
+    form = UpdateForm(instance=post)
+    print('EDITING')
+    if request.method == "POST":
+        form = UpdateForm(request.POST)
+        print('METHOD IS POST')
+        print(request)
+        post.title = request.POST.get('title')
+        post.slug = request.POST.get('slug')
+        post.content = request.POST.get('content')
+        post.status = request.POST.get('status')
         if form.is_valid():
-            try:
-                name = request.POST.get('name')
-                email = request.POST.get('email')
-                phone = request.POST.get('phone')
-                message = request.POST.get('message')
-                
-                recipient = ['orrin24johnson@gmail.com']
-                
-                send_mail(name,
-                          email,
-                          phone,
-                          message,
-                          recipient,
-                          fail_silently=False)
-                
-            except BadHeaderError:
-                return HttpResponse('Bad Header Found')
+            print('Form is:', form)
+            form.save(commit=True)
             
-    return redirect('blog/index.html')
+        post.save()
+        return redirect('/')
+    context = {
+        'form': form
+    }
+
+    return render(request, 'blog/edit_post.html', context)
+    
+        
+    
+    
                 

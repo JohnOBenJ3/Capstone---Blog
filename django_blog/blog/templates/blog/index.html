@@ -77,6 +77,10 @@
           <h2 class="post-title"><a href="{% url 'post-detail' post.slug %}">{{post.title}}</h2>
             <p class="post-meta">{{post.created_on|date:"l M d, Y"}}</p>
             <p class="text-muted">{{post.content|slice:":150" }}...</p>
+            {% if user.is_superuser %}
+            <button class="btn btn-primary"><a href="{% url 'delete-post' post.slug%}">Delete</a></button>
+            <button class="btn btn-primary"><a href="{% url 'edit-post' post.slug%}">Edit</a></button>
+            {% endif %}
             <hr>
           </div>
           {% endfor %}
