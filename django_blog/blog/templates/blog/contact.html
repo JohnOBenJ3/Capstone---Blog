@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Blog - Contact</title>
+  <title>WSGI & Walnut - Contact</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -67,7 +67,6 @@
       </div>
     </div>
   </header>
- 
 
   <!-- Main Content -->
   <div class="container">
@@ -77,29 +76,98 @@
         <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
         <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
         <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-        <div id="after_submit"></div>
-<form id="contact_form" action="https://www.enformed.io/asm9hpxv" method="POST" enctype="multipart/form-data">
-  <div class="row">
-    <label class="required" for="name">Your name:</label><br />
-    <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
-    <span id="name_validation" class="error_message"></span>
-  </div>
-  <div class="row">
-    <label class="required" for="email">Your email:</label><br />
-    <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
-    <span id="email_validation" class="error_message"></span>
-  </div>
-  <div class="row">
-    <label class="required" for="message">Your message:</label><br />
-    <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
-    <span id="message_validation" class="error_message"></span>
-  </div>
-    
-    <input id="submit_button" type="submit" value="Send email" />
-      </div>
-    </div>
-  </div>
-
+        <div class="form-style-6">
+            <h1>Contact Me</h1>
+            <form action="https://www.enformed.io/asm9hpxv" method="POST">
+            <input type="text" name="field1" placeholder="Your Name" />
+            <input type="email" name="field2" placeholder="Email Address" />
+            <textarea name="field3" placeholder="Type your Message"></textarea>
+            <input type="submit" value="Send" />
+            <input type="hidden" name="*redirect" value="https://cryptic-castle-88005.herokuapp.com/" />
+            
+            </form>
+            </div>
+            <style type="text/css">
+              .form-style-6{
+                font: 95% Arial, Helvetica, sans-serif;
+                max-width: 400px;
+                margin: 10px auto;
+                padding: 16px;
+                background: #F7F7F7;
+              }
+              .form-style-6 h1{
+                background: #43D1AF;
+                padding: 20px 0;
+                font-size: 140%;
+                font-weight: 300;
+                text-align: center;
+                color: #fff;
+                margin: -16px -16px 16px -16px;
+              }
+              .form-style-6 input[type="text"],
+              .form-style-6 input[type="date"],
+              .form-style-6 input[type="datetime"],
+              .form-style-6 input[type="email"],
+              .form-style-6 input[type="number"],
+              .form-style-6 input[type="search"],
+              .form-style-6 input[type="time"],
+              .form-style-6 input[type="url"],
+              .form-style-6 textarea,
+              .form-style-6 select 
+              {
+                -webkit-transition: all 0.30s ease-in-out;
+                -moz-transition: all 0.30s ease-in-out;
+                -ms-transition: all 0.30s ease-in-out;
+                -o-transition: all 0.30s ease-in-out;
+                outline: none;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                background: #fff;
+                margin-bottom: 4%;
+                border: 1px solid #ccc;
+                padding: 3%;
+                color: #555;
+                font: 95% Arial, Helvetica, sans-serif;
+              }
+              .form-style-6 input[type="text"]:focus,
+              .form-style-6 input[type="date"]:focus,
+              .form-style-6 input[type="datetime"]:focus,
+              .form-style-6 input[type="email"]:focus,
+              .form-style-6 input[type="number"]:focus,
+              .form-style-6 input[type="search"]:focus,
+              .form-style-6 input[type="time"]:focus,
+              .form-style-6 input[type="url"]:focus,
+              .form-style-6 textarea:focus,
+              .form-style-6 select:focus
+              {
+                box-shadow: 0 0 5px #43D1AF;
+                padding: 3%;
+                border: 1px solid #43D1AF;
+              }
+              
+              .form-style-6 input[type="submit"],
+              .form-style-6 input[type="button"]{
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                padding: 3%;
+                background: #43D1AF;
+                border-bottom: 2px solid #30C29E;
+                border-top-style: none;
+                border-right-style: none;
+                border-left-style: none;	
+                color: #fff;
+              }
+              .form-style-6 input[type="submit"]:hover,
+              .form-style-6 input[type="button"]:hover{
+                background: #2EBC99;
+              }
+              </style>
+        
+        
   <hr>
 
   <!-- Footer -->
@@ -109,7 +177,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.instagram.com/orrin_johnson_woodworks/">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
@@ -117,7 +185,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.facebook.com/OrrinJohnson22/">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
@@ -125,7 +193,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/JohnOBenJ3">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-github fa-stack-1x fa-inverse"></i>

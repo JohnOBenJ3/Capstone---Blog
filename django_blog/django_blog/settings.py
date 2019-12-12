@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') or 'super_secret_key'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
@@ -64,7 +64,6 @@ SERVER_EMAIL = ''
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
