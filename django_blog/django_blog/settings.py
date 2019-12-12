@@ -166,10 +166,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 # EMAIL_HOST_PASSWORD = 'init4Bennett'
 
 django_heroku.settings(locals())
+
