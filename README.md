@@ -9,7 +9,10 @@ I hope that the content that I present in this app will give a better reflection
 
 There will be multiple sections to the app including but not limited to, links to a portfolio(eventually) and an about me section. 
 
-User comments will be welcome.
+User comments coming in the next release!!!
+
+
+Fork and clone to use. If you want to run locally with the dependencies, make sure you have Python3 and pip installed on your machine and once the clone is complete, run `pip install -r requirements.txt`. `python manage.py runserver` should start your server running on port 7000 locally. To run the server, make sure you are in the level below the Pipfile (run 'ls' in the terminal to check(on Mac) or 'dir' if on a Windows machine. 
 
 
 
@@ -26,3 +29,5 @@ User = username,
        email,
        first_name,
        last_name
+       
+
